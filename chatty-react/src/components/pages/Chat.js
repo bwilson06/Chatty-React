@@ -1,9 +1,10 @@
 import React from 'react';
+import Nav from '../sub-components/Nav';
 
 const Chat = () => {
     return (
         <div>
-            <h1>Chat room</h1>
+            <Nav />
         </div>
     );
 };

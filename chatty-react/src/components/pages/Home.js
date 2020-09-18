@@ -5,8 +5,6 @@ const Home = () => {
   return (
     <div>
       <Nav />
-      <br></br>
-      <br></br>
       <Container>
         <Jumbotron fluid>
           <Container>
@@ -21,7 +19,7 @@ const Home = () => {
           Join Room
         </Button>
         <Button variant="danger" size="lg" block href="/create">
-          Create Room
+          Create Session
         </Button>
       </Container>
     </div>
