@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
-import Home from '../src/components/Home';
-import Join from '../src/components/Join';
-import Create from '../src/components/Create';
-import Chat from '../src/components/Chat';
+import Home from './components/pages/Home';
+import Join from './components/pages/Join';
+import Create from './components/pages/Create';
+import Chat from './components/pages/Chat';
 import './App.css';
 
 function App() {

@@ -1,0 +1,17 @@
+.navbar {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100px;
+    background-color: #4aaaaf;
+    text-align: center;
+}
+
+.brand {
+  margin: 0 auto;
+  display: table-cell;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 28px;
+}
+
+
