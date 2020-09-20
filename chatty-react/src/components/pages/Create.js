@@ -13,7 +13,8 @@ class Create extends Component {
     this.setState({ errors: [] });
   };
 
-  genRoomCode = () => {
+  genRoomCode = (event) => {
+    event.preventDefault();
     var result = "";
     var characters =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -48,7 +49,7 @@ class Create extends Component {
               </p>
               <Alert
                 errors={this.state.errors}
-                clearErrors={this.clearErrors}
+                clearErrors={(event) => this.clearErrors(event)}
               />
               <Form>
                 <Form.Group controlId="formBasicEmail">

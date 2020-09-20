@@ -17,7 +17,7 @@ require("./routes/apiRoutes.js")(app);
 //making public a static folder
 app.use(express.static("public"));
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/NewsChattyReact";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/ChattyReact";
 
 // Connect to our database
 mongoose.connect(MONGODB_URI);
