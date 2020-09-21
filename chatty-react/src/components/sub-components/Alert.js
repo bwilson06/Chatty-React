@@ -2,8 +2,7 @@ import React from 'react';
 import { Alert } from 'react-bootstrap';
 
 function AlertDismissible(props){
-    console.log(props)
-    if (props.errors.length === 0) {
+    if (props.userNameError === false) {
     return (
         <></>
     )

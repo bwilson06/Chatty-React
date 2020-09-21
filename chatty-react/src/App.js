@@ -10,9 +10,9 @@ function App() {
   return (
     <Router>
       <Route exact path="/" component={Home} />
-      <Route path="/Join" component={Join} />
+      <Route path="/join" component={Join} />
       <Route path="/create" component={Create} />
-      <Route path="/Chat" component={Chat} />
+      <Route path="/chat/:room_id" component={Chat} />
     </Router>
   ); 
 }

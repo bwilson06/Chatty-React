@@ -7,6 +7,7 @@ module.exports = function (app) {
         db.Chats.create({ roomCode: req.body.result })
           .then(function (result) {
             console.log(result);
+            res.send(result)
           })
           .catch(function (error) {
             console.log(error);
