@@ -7,6 +7,10 @@ var chats = new Schema ({
     roomCode : {
         type: String,
         required: true
+    },
+    adminName : {
+        type: String,
+        required: true
     }
 });
 

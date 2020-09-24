@@ -36,7 +36,8 @@ class Create extends Component {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     const newResult = {
-        result: result
+        result: result,
+        admin: this.state.userName
     }
     axios
         .post("/create", newResult)
