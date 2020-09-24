@@ -7,7 +7,7 @@ import { Jumbotron, Container, Form, Button } from "react-bootstrap";
 
 class Create extends Component {
   state = {
-    userNameError: false,
+    errors: [],
     userName: '',
     redirect: false,
     route: ''
@@ -15,20 +15,19 @@ class Create extends Component {
 
 
   clearErrors = () => {
-    this.setState({ userNameError: false });
+    this.setState({ errors: [] });
   };
 
   handleChange = (event) => {
-      console.log(event.target.value)
       this.setState({ userName: event.target.value })
   };
 
   genRoomCode = (event) => {
     event.preventDefault();
     if (this.state.userName === ''){
-      this.setState({ userNameError: true })
+      this.setState({ errors: ["Please enter your username."] })
     }else{
-    this.setState({ userNameError: false })
+    this.setState({ errors: [] })
     var result = "";
     var characters =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -68,7 +67,7 @@ class Create extends Component {
                 your room's code.
               </p>
               <Alert
-                userNameError={this.state.userNameError}
+                errors={this.state.errors}
                 clearErrors={(event) => this.clearErrors(event)}
               />
               <Form>
