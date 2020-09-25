@@ -11,6 +11,10 @@ var chats = new Schema ({
     adminName : {
         type: String,
         required: true
+    },
+    chats: {
+        type: Array,
+        required: false
     }
 });
 

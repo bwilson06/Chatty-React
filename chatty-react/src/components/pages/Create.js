@@ -43,7 +43,7 @@ class Create extends Component {
         .post("/create", newResult)
         .then((response) => {
             if (response){
-              let route = `/chat/${response.data.roomCode}`
+              let route = `/chat/${response.data.roomCode}/${this.state.userName}`
               this.setState({ route: route })
               this.setState({ redirect: true })
             }  

@@ -12,7 +12,7 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route path="/join" component={Join} />
       <Route path="/create" component={Create} />
-      <Route path="/chat/:room_id" component={Chat} />
+      <Route path="/chat/:room_id?/:username?" component={Chat} />
     </Router>
   ); 
 }
