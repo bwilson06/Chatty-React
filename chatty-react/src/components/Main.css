@@ -24,11 +24,10 @@
   margin-bottom: 50px;
   box-shadow: 1px 1px 8px 2px #20232A;
   opacity: 70%;
+  overflow-y: auto;
 }
 
 .input-group {
-  position: absolute !important; 
-  bottom: 0;
   height: 60px;
   left: 0;
 }
@@ -41,4 +40,20 @@
   border-radius: 0 !important;
 }
 
+.chat-flex {
+  display: flex;
+  padding: 10px;
+}
 
+.blah {
+  word-break:break-word;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: khaki;
+  border-radius: 10px;
+}
+
+.yo {
+  font-weight: bolder;
+  padding-right: 5px;
+}

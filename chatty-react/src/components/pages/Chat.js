@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container, Button, InputGroup, FormControl } from "react-bootstrap";
 import Nav from "../sub-components/Nav";
+import ChatContainer from "../sub-components/ChatContainer";
 import "../Main.css";
 import axios from 'axios';
 
@@ -50,6 +51,7 @@ class Chat extends Component {
         <Nav />
         <Container>
           <div className="chatbox">
+            <ChatContainer className="chat-container" messages={this.state.chats}/>
             <InputGroup>
               <FormControl
                 placeholder="Enter your message"
