@@ -6,21 +6,43 @@ import axios from 'axios';
 
 class Chat extends Component {
   state = {
-    message: ''
+    message: '',
+    chats: []
   }
 
   componentDidMount() {
-    let id = this.props.match.params.room_id;
-    console.log(id);
-    console.log(this.props.match.params.username)
+    axios
+      .get(`/chat/${this.props.match.params.room_id}`)
+      .then((response) => {
+        if (response) {
+        console.log(response.data.chats)
+        this.setState({ chats: response.data.chats })
+        console.log(this.state.chats)
+        }
+      })
   }
 
   handleChange = (event) => {
-    this.setState({ chat: event.target.value })
+    this.setState({ message: event.target.value })
   };
 
   handleSubmit = () => {
-    console.log(this.state.chat)
+    var chat = {
+       username: this.props.match.params.username,
+       message: this.state.message,
+       code: this.props.match.params.room_id
+    }
+
+    axios
+        .post("/chat", chat)
+        .then((response) => {
+            if (response){
+              console.log(response)
+            }  
+        })
+        .catch((error) => {
+            console.log(error);
+          });
   }
   render() {
     return (

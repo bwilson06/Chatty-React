@@ -16,4 +16,26 @@ module.exports = function (app) {
     });
   });
 
+  app.post("/chat", (req, res) => {
+    let message = {
+      username: req.body.username,
+      message: req.body.message
+    }
+    db.Chats.update(
+      { roomCode: req.body.code },
+      { $push: { chats: message } }
+    ).then(function (result) {
+      console.log(result);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  })
+
+  app.get("/chat/:code", (req, res) => {
+    db.Chats.findOne({ roomCode: req.params.code })
+    .then((response) => {
+      res.send(response)
+    })
+  })
 };
