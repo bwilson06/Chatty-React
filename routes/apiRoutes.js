@@ -26,6 +26,7 @@ module.exports = function (app) {
       { $push: { chats: message } }
     ).then(function (result) {
       console.log(result);
+      res.send(result)
     })
     .catch(function (error) {
       console.log(error);

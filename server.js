@@ -1,11 +1,11 @@
 var express = require("express");
 var mongoose = require("mongoose")
+var app = require('express')();
+var http = require('http').createServer(app);
+var io = require('socket.io')(http);
 
 //port for environment
 var PORT = process.env.PORT || 3001;
-
-//initialize express server
-var app = express();
 
 //parser
 app.use(express.urlencoded({ extended: true }));
@@ -29,7 +29,15 @@ var db = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+io.on('connection', (socket) => {
+    console.log('a user connected');
+    socket.on('message', (message) => {
+        console.log(message)
+        io.emit('message', message)
+    })
+});
+
 //starting server
-app.listen(PORT, function() {
+http.listen(PORT, function() {
     console.log(`Express is running on port ${PORT}`);
 });
