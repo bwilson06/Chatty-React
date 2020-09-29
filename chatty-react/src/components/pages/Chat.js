@@ -55,8 +55,11 @@ class Chat extends Component {
 
  componentDidMount(){
   axios.get(`/chat/${this.props.match.params.room_id}`).then((response) => {
-          if (response) {
+          if (response.data.chats.length > 0) {
+            console.log(response.data.chats.length)
              this.setState({ chats: response.data.chats })
+           }else{
+             this.setState({ chats: [{username: 'Chatty', message: 'Say hello!'}]})
            }
          });
  }
