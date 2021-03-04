@@ -6,7 +6,7 @@
     background-color: #4aaaaf;
     text-align: center;
     color: white;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 .brand {
@@ -19,7 +19,7 @@
 .chatbox {
   position: relative;
   width: 100%;
-  height: 70vh;
+  height: 60vh;
   background-color: #EEEEEE;
   box-shadow: 1px 1px 10px 0px #20232A;
   opacity: 70%;
@@ -57,4 +57,38 @@
 .send{
   border-radius: 0 !important;
 }
+
+.invite-id {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  background-color: #F3F3F3;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+a {
+  color: white !important;
+  text-decoration: none;
+}
+
+a:hover 
+{
+   color:#00A0C6; 
+   text-decoration:none; 
+   cursor:pointer;  
+}
+
+.copy-id {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.room-id {
+  font-size: 30px;
+  color: #4aaaaf;
+  cursor: pointer;
+}
+
 

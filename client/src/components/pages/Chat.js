@@ -36,6 +36,11 @@ class Chat extends Component {
       this.setState({ message: event.target.value });
     };
 
+    this.copyId = (e) => {
+      e.preventDefault()
+      navigator.clipboard.writeText(e.target.id)
+    }
+
     this.handleSubmit = (event) => {
       event.preventDefault();
       let newChat = {
@@ -80,6 +85,10 @@ class Chat extends Component {
       <div>
         <Nav />
         <Container>
+          <div className="invite-id">
+            <h1 className="copy-id">Copy invite ID:</h1>
+            <h1 onClick={(e) => this.copyId(e)} className="room-id" id={this.props.match.params.room_id}>{this.props.match.params.room_id}</h1>
+          </div>
           <div className="chatbox" id="chatbox">
             <ChatContainer
               className="chat-container"

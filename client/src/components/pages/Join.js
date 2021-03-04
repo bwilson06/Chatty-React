@@ -19,6 +19,8 @@ class Join extends Component {
       this.setState({ errors: ["Please enter your room code"]})
     }else if (this.state.username === ''){
       this.setState({ errors: ["Please enter your username."]})
+    }else{
+      window.location.href = `/chat/${this.state.room_code}/${this.state.username}`
     }
   }
 
@@ -60,7 +62,7 @@ class Join extends Component {
                 </Form.Text>
               </Form.Group>
             </Form>
-            <Button variant="primary" size="lg" block id="join" onClick={this.joinRoom}>
+            <Button variant="primary" size="lg" block id="join" onClick={(e) => this.joinRoom(e)}>
           Join Room
         </Button>
           </Container>
