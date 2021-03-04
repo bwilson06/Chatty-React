@@ -42,7 +42,7 @@ class Join extends Component {
           <Container>
             <h1 className="text-center">Join</h1>
             <p className="text-center">
-              Please enter the four letter room code below.
+              Please enter the five letter room code below.
             </p>
             <Alert
                 errors={this.state.errors}
