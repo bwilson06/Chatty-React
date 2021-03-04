@@ -15,7 +15,7 @@ class Chat extends Component {
       chats: [],
     };
 
-    this.socket = io.connect("http://localhost:3001");
+    this.socket = io.connect("https://chatty-react-bw.herokuapp.com/");
 
     this.socket.on("message", (message) => {
       if (this.state.chats.length > 0) {
