@@ -92,10 +92,10 @@ a:hover
 
 @media screen and (max-width: 500px) {
   .room-id {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .copy-id {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
